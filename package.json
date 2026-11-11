@@ -1,0 +1,17 @@
+
+{
+  "name": "secure-task-manager",
+  "version": "1.0.0",
+  "description": "Secure Task Manager",
+  "main": "app.js",
+  "scripts": {
+    "start": "live-server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.119.0"
+  }
+}

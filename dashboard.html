@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow | Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <div class="tf-layout">
+
+        <aside class="tf-sidebar">
+            <div class="tf-brand">
+                <span class="tf-brand-icon">✓</span>
+                <span>TaskFlow</span>
+            </div>
+
+            <p class="tf-menu-label">WORKSPACE</p>
+            <nav class="tf-nav">
+                <button class="tf-nav-item active" data-filter="all">
+                    <span>▦</span> Dashboard
+                </button>
+                <button class="tf-nav-item" data-filter="pending">
+                    <span>◷</span> Pending Tasks
+                </button>
+                <button class="tf-nav-item" data-filter="completed">
+                    <span>✓</span> Completed Tasks
+                </button>
+            </nav>
+
+            <div class="tf-sidebar-bottom">
+                <div class="tf-profile">
+                    <div class="tf-avatar" id="user-avatar">U</div>
+                    <div class="tf-profile-info">
+                        <strong id="sidebar-email">Loading...</strong>
+                        <small>Personal Workspace</small>
+                    </div>
+                </div>
+                <button id="logout-btn" class="tf-logout">↪ Log out</button>
+            </div>
+        </aside>
+
+        <main class="tf-main">
+            <header class="tf-topbar">
+                <div>
+                    <p class="tf-eyebrow">YOUR WORKSPACE</p>
+                    <h1 id="page-heading">Dashboard</h1>
+                </div>
+                <div class="tf-top-user" id="top-email">Loading...</div>
+            </header>
+
+            <section class="tf-welcome">
+                <div>
+                    <p class="tf-eyebrow">OVERVIEW</p>
+                    <h2>Stay focused. Get things done.</h2>
+                    <p>Organize your work and keep track of your progress.</p>
+                </div>
+                <div class="tf-welcome-icon">✦</div>
+            </section>
+
+            <section class="tf-stats">
+                <article class="tf-stat-card">
+                    <div class="tf-stat-icon purple">▦</div>
+                    <p>Total Tasks</p>
+                    <h2 id="total-count">0</h2>
+                    <small>All your tasks</small>
+                </article>
+                <article class="tf-stat-card">
+                    <div class="tf-stat-icon orange">◷</div>
+                    <p>Pending</p>
+                    <h2 id="pending-count">0</h2>
+                    <small>Need your attention</small>
+                </article>
+                <article class="tf-stat-card">
+                    <div class="tf-stat-icon green">✓</div>
+                    <p>Completed</p>
+                    <h2 id="completed-count">0</h2>
+                    <small>Tasks finished</small>
+                </article>
+            </section>
+
+            <section class="tf-content">
+                <div class="tf-section-heading">
+                    <div>
+                        <h2 id="task-section-title">My Tasks</h2>
+                        <p>Manage your daily activities</p>
+                    </div>
+                </div>
+
+                <form id="task-form" class="tf-add-form">
+                    <div class="tf-form-heading">
+                        <h3>Add a new task</h3>
+                        <span>＋</span>
+                    </div>
+                    <input
+                        type="text"
+                        id="task-title"
+                        placeholder="What do you need to do?"
+                        maxlength="120"
+                        required
+                    >
+                    <textarea
+                        id="task-description"
+                        placeholder="Add a description (optional)"
+                        rows="2"
+                        maxlength="1000"
+                    ></textarea>
+                    <div class="tf-form-footer">
+                        <small>Keep your next step clear and simple.</small>
+                        <button type="submit" id="add-task-btn">＋ Add Task</button>
+                    </div>
+                </form>
+
+                <div id="task-message" class="tf-message" role="status"></div>
+                <div id="task-list" class="tf-task-list">
+                    <p class="tf-loading">Loading your tasks...</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script type="module" src="dashboard.js"></script>
+</body>
+</html>
